@@ -1,10 +1,9 @@
 # BlueStamp CleaningRobt
-This project uses an arduino to control a floor cleaning a robot. It utilizes an ultrasonic sensor to know when to stop and turn,and uses 4 DC motors and a motor driver to control the movement. A vacuum and a brush are attached to the car to clean the floor
+This Arduino-based project controls an autonomous floor-cleaning robot. It uses an ultrasonic sensor to navigate around obstacles by stopping and turning, while four DC motors and a motor driver handle its movement. To clean the floor, a vacuum and a brush assembly are integrated into the chassis.
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
+```HTML
+1
 ```
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -54,7 +53,9 @@ For your first milestone, describe what your project is and how you plan to buil
 - What your plan is to complete your project
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+<img width="724" height="308" alt="image" src="https://github.com/user-attachments/assets/bcce2ea2-b93e-4ac7-8bd7-4b78a7a8f289" />
+
+
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
