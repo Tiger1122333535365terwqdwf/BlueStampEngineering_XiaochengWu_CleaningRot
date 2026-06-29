@@ -61,15 +61,60 @@ For your first milestone, describe what your project is and how you plan to buil
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
+#Ultrasonic Sensor Code#
+const int trigPin = 12;
+const int echoPin = 13;
+long duration;
+int distance;
+
 void setup() {
-  // put your setup code here, to run once:
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin,INPUT);
   Serial.begin(9600);
-  Serial.println("Hello World!");
+}
+
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delay(2);
+
+  digitalWrite(trigPin, HIGH);
+  delay(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration*0.034/2;
+
+  Serial.print("Distance:");
+  Serial.println(distance);
+}
+
+
+#Motor Driver Code#
+int in1 = 2;
+int in2 = 4;
+int enA = 3;
+void setup() {
+  pinMode(enA, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  analogWrite(enA, 200);
+  delay(1500);
 
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  analogWrite(enA, 0);
+  delay(500);
+
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  analogWrite(enA, 200);
+  delay(1500);
 }
 ```
 
