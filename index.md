@@ -54,6 +54,7 @@ For your first milestone, describe what your project is and how you plan to buil
 
 # Schematics 
 <img width="724" height="308" alt="image" src="https://github.com/user-attachments/assets/bcce2ea2-b93e-4ac7-8bd7-4b78a7a8f289" />
+<img width="752" height="180" alt="image" src="https://github.com/user-attachments/assets/c4623bec-e060-40f7-a4b8-e01e293da447" />
 
 
 
