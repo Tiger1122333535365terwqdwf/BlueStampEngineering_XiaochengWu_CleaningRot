@@ -14,8 +14,9 @@ You should comment out all portions of your portfolio that you have not complete
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
-<img width="3072" height="4096" alt="微信图片_20260630232521_1374_24" src="https://github.com/user-attachments/assets/e7cb4512-b337-44e1-ac51-316355c24934" />
-<img width="4096" height="3072" alt="微信图片_20260630232521_1375_24" src="https://github.com/user-attachments/assets/3e18f5f9-c1a5-442b-acfd-9f180c4e9b9f" />
+<img width="689" height="482" alt="image" src="https://github.com/user-attachments/assets/55ee9d7b-b409-4996-8e67-594c3015945d" />
+<img width="647" height="545" alt="Screenshot 2026-06-30 235027" src="https://github.com/user-attachments/assets/746f33ce-5e1b-4db2-bb6e-e6a9d4eb5904" />
+
 
   
 # Final Milestone
