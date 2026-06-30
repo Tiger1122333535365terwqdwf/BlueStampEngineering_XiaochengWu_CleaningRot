@@ -3,7 +3,9 @@ This Arduino-based project controls an autonomous floor-cleaning robot. It uses 
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML
-1
+1。Assembly and circuit diagram design have been completed. But it hasn't been wired yet
+2.Test to see if the car can move
+3.Add the cleaning function section
 ```
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -12,7 +14,9 @@ You should comment out all portions of your portfolio that you have not complete
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
-![Headstone Image](logo.svg)
+<img width="3072" height="4096" alt="微信图片_20260630232521_1374_24" src="https://github.com/user-attachments/assets/e7cb4512-b337-44e1-ac51-316355c24934" />
+<img width="4096" height="3072" alt="微信图片_20260630232521_1375_24" src="https://github.com/user-attachments/assets/3e18f5f9-c1a5-442b-acfd-9f180c4e9b9f" />
+
   
 # Final Milestone
 
@@ -21,7 +25,8 @@ You should comment out all portions of your portfolio that you have not complete
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
+- What you've accomplished since your previous milestone<img width="3072" height="4096" alt="微信图片_20260630232520_1373_24" src="https://github.com/user-attachments/assets/f0ae6429-387e-494f-831d-65a9cb307208" />
+
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
