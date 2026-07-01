@@ -12,10 +12,8 @@ You should comment out all portions of your portfolio that you have not complete
 |:--:|:--:|:--:|:--:|
 | Xiaocheng Wu | Beijing Huijia Private School | Electrical Engineering | Incoming Senior
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
+<img width="890" height="562" alt="image" src="https://github.com/user-attachments/assets/be9b6f75-ba6c-4094-af43-f4170ca6fe05" />
 
-<img width="689" height="482" alt="image" src="https://github.com/user-attachments/assets/55ee9d7b-b409-4996-8e67-594c3015945d" />
-<img width="647" height="545" alt="Screenshot 2026-06-30 235027" src="https://github.com/user-attachments/assets/746f33ce-5e1b-4db2-bb6e-e6a9d4eb5904" />
 
 
   
