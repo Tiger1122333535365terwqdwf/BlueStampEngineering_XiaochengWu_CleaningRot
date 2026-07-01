@@ -38,11 +38,11 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+For Milestone 2, the focus shifted from hardware assembly to bringing the cleaning robot to life through programming. I successfully deployed the custom Arduino UNO code, officially giving the robot its "brain." The core achievement of this phase is the autonomous cleaning logic. Instead of just driving around, the robot now executes a specific "sweeping" motion—moving forward and backing up to create floor friction, allowing the rear-mounted vacuum to clean thoroughly.
+<img width="836" height="482" alt="Screenshot 2026-07-02 011753" src="https://github.com/user-attachments/assets/68ad4f82-c282-448d-9876-76037c2baa59" />
+Additionally, I implemented a reliable dual-sensor obstacle avoidance system. By combining real-time data from the front ultrasonic sensor and the side infrared sensors, the robot detects obstacles within 20 centimeters. It instantly stops the sweeping motion, backs up, and changes direction to avoid collisions. A 10-minute work timer was also coded in. The practical test run was a huge success, proving the hardware and software work perfectly together as we head into Milestone 3.
+
+
 
 # First Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/azjHpwhbsDQ?si=BmbZbCT58dMMpRmZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
