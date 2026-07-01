@@ -47,16 +47,17 @@ For your second milestone, explain what you've worked on since your previous mil
 - What needs to be completed before your final milestone 
 
 # First Milestone
-
+https://drive.google.com/file/d/1hKYec4Opkr3BmsFwOU-6zMKF-JFXyaLi/view?usp=sharing
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+<img width="734" height="481" alt="image" src="https://github.com/user-attachments/assets/d02929e5-a531-42ed-a3c6-0b9eb5b9a802" />
+
+<img width="539" height="454" alt="image" src="https://github.com/user-attachments/assets/9b1fd67d-a7e8-4828-8fc3-d3c7fd066cf9" />
+
+
+Milestone 1 is all about bringing the physical body of the cleaning robot to life. I assembled the vehicle chassis and integrated the core hardware modules: the ultrasonic sensor for distance measurement, the infrared sensing module for obstacle detection, the infrared transmission module for communication, the mainboard, and the LED expansion board. After carefully connecting all the wiring, I powered on the system. The moment I switched on the battery, every LED lit up steadily across all modules—no flickering, no errors. That clean, stable glow confirmed the wiring is solid and fault‑free. In engineering, passing this first power‑on test is a quiet but significant victory. The hardware foundation is now real, reliable, and ready. With the physical platform proven, I’ll now shift focus entirely to the brain: mainboard development and coding, turning this assembled chassis into an autonomous cleaning robot.
 
 # Schematics 
 <img width="724" height="308" alt="image" src="https://github.com/user-attachments/assets/bcce2ea2-b93e-4ac7-8bd7-4b78a7a8f289" />
