@@ -47,10 +47,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - What needs to be completed before your final milestone 
 
 # First Milestone
-https://drive.google.com/file/d/1hKYec4Opkr3BmsFwOU-6zMKF-JFXyaLi/view?usp=sharing
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src=" https://www.youtube.com/playlist?list=PLUod6pM3Lgaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/azjHpwhbsDQ?si=BmbZbCT58dMMpRmZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <img width="734" height="481" alt="image" src="https://github.com/user-attachments/assets/d02929e5-a531-42ed-a3c6-0b9eb5b9a802" />
 
