@@ -10,7 +10,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Xiaocheng Wu | Beijing Huijia Private School | Electrical Engineering | Incoming Senior
+| Xiaocheng Wu | Beijing Huijia Private School | Electrical Engineering | Year 9
 
 <img width="890" height="562" alt="image" src="https://github.com/user-attachments/assets/be9b6f75-ba6c-4094-af43-f4170ca6fe05" />
 
