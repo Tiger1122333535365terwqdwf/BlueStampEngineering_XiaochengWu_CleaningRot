@@ -26,7 +26,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 
 For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone<img width="3072" height="4096" alt="微信图片_20260630232520_1373_24" src="https://github.com/user-attachments/assets/f0ae6429-387e-494f-831d-65a9cb307208" />
+- What you've accomplished since your previous milestone
 
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
