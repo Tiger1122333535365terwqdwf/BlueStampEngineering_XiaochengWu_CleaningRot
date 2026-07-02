@@ -32,9 +32,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/70A_4osS0bQ?si=ZjsBnkr_pQ4pZom-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 For Milestone 2, the focus shifted from hardware assembly to bringing the cleaning robot to life through programming. I successfully deployed the custom Arduino UNO code, officially giving the robot its "brain." The core achievement of this phase is the autonomous cleaning logic. Instead of just driving around, the robot now executes a specific "sweeping" motion—moving forward and backing up to create floor friction, allowing the rear-mounted vacuum to clean thoroughly.
 <img width="836" height="482" alt="Screenshot 2026-07-02 011753" src="https://github.com/user-attachments/assets/68ad4f82-c282-448d-9876-76037c2baa59" />
