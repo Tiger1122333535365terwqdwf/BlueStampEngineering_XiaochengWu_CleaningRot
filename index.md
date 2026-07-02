@@ -57,7 +57,8 @@ Milestone 1 is all about bringing the physical body of the cleaning robot to lif
 # Schematics 
 <img width="724" height="308" alt="image" src="https://github.com/user-attachments/assets/bcce2ea2-b93e-4ac7-8bd7-4b78a7a8f289" />
 <img width="752" height="180" alt="image" src="https://github.com/user-attachments/assets/c4623bec-e060-40f7-a4b8-e01e293da447" />
-<img width="2628" height="1763" alt="红外遥控_接线图" src="https://github.com/user-attachments/assets/40240d8c-a4ca-4bff-af4e-355acc9cc093" />
+<img width="792" height="526" alt="image" src="https://github.com/user-attachments/assets/4863996f-cc06-4b3b-aee2-18defdb6332d" />
+
 
 
 
