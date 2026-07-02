@@ -3,9 +3,7 @@ This Arduino-based project controls an autonomous floor-cleaning robot. It uses 
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML
-1。Assembly and circuit diagram design have been completed. But it hasn't been wired yet
-2.Test to see if the car can move
-3.Add the cleaning function section
+modifications
 ```
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
