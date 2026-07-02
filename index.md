@@ -58,6 +58,11 @@ Milestone 1 is all about bringing the physical body of the cleaning robot to lif
 <img width="724" height="308" alt="image" src="https://github.com/user-attachments/assets/bcce2ea2-b93e-4ac7-8bd7-4b78a7a8f289" />
 <img width="752" height="180" alt="image" src="https://github.com/user-attachments/assets/c4623bec-e060-40f7-a4b8-e01e293da447" />
 <img width="792" height="526" alt="image" src="https://github.com/user-attachments/assets/4863996f-cc06-4b3b-aee2-18defdb6332d" />
+<img width="2769" height="1272" alt="1 电机测试" src="https://github.com/user-attachments/assets/3c5a2dc8-ccc6-4e45-aeb3-05154905d132" />
+<img width="2628" height="2063" alt="超声波避障_接线图" src="https://github.com/user-attachments/assets/bfc57eed-310d-4bee-86c3-cadb46122de4" />
+<img width="2628" height="2030" alt="红外避障_接线图" src="https://github.com/user-attachments/assets/fdb5d248-8ee2-4636-b2ad-13adbecc5340" />
+<img width="2628" height="2030" alt="红外跟随_接线图" src="https://github.com/user-attachments/assets/eaeceb86-254f-4b93-8b6c-420624182a7a" />
+
 
 
 
