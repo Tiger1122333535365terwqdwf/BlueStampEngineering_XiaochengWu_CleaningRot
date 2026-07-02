@@ -48,30 +48,19 @@ Additionally, I implemented a reliable dual-sensor obstacle avoidance system. By
 Milestone 1 is all about bringing the physical body of the cleaning robot to life. I assembled the vehicle chassis and integrated the core hardware modules: the ultrasonic sensor for distance measurement, the infrared sensing module for obstacle detection, the infrared transmission module for communication, the mainboard, and the LED expansion board. After carefully connecting all the wiring, I powered on the system. The moment I switched on the battery, every LED lit up steadily across all modules—no flickering, no errors. That clean, stable glow confirmed the wiring is solid and fault‑free. In engineering, passing this first power‑on test is a quiet but significant victory. The hardware foundation is now real, reliable, and ready. With the physical platform proven, I’ll now shift focus entirely to the brain: mainboard development and coding, turning this assembled chassis into an autonomous cleaning robot.
 
 # Schematics 
-<img width="724" height="308" alt="image" src="https://github.com/user-attachments/assets/bcce2ea2-b93e-4ac7-8bd7-4b78a7a8f289" />
 <img width="752" height="180" alt="image" src="https://github.com/user-attachments/assets/c4623bec-e060-40f7-a4b8-e01e293da447" />
 
 (over all graph)
 
-<img width="792" height="526" alt="image" src="https://github.com/user-attachments/assets/4863996f-cc06-4b3b-aee2-18defdb6332d" />
-
-(Infrared remote control wiring diagram)
 
 <img width="1276" height="586" alt="image" src="https://github.com/user-attachments/assets/2208ecd2-39c3-4232-8e42-4a9c6b8f7bc2" />
 
 (Motor Wiring Diagram)
 
-<img width="839" height="633" alt="image" src="https://github.com/user-attachments/assets/17ce36f3-6fe8-44f3-aa4a-0104f066cc3d" />
-
-（Infrared Follow Wiring Diagram）
 
 <img width="839" height="638" alt="image" src="https://github.com/user-attachments/assets/74492eab-bcd1-485c-96ac-06f75129aafe" />
 
 (Infrared obstacle avoidance wiring diagram)
-
-<img width="874" height="629" alt="image" src="https://github.com/user-attachments/assets/e0adb9a1-d614-4e09-8633-fec82062a6a6" />
-
-(Ultrasonic obstacle avoidance)
 
 
 # Code
