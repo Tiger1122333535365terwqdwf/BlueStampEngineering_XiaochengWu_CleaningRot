@@ -248,6 +248,8 @@ void stopMotors() {
 ```
 
 # Bill of Materials
+
+
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Sunfounder Kit | Used for building basic frameworks and circuits| 62.99 | <a href="https://www.amazon.com/SunFounder-Compatible-Tutorials-Including-Controller/dp/B0B778L1DZ/"> Link </a> |
