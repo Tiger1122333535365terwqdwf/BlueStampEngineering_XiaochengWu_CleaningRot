@@ -86,7 +86,7 @@ Milestone 1 is all about bringing the physical body of the cleaning robot to lif
 # Code
 
 
-```c++  Command Center (ESP8266 Timer Board Code)          
+```c++    
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <TM1637Display.h>
@@ -196,7 +196,7 @@ void loop() {
 ```
 
 
-```c++        Robot Chassis (Arduino UNO Motor Board Code)
+```c++
 // ---------------- Pin Definitions ----------------
 
 // L298N Motor Driver Control Pins (Based on official wiring document)
