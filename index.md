@@ -404,12 +404,15 @@ void stopMotors() {
 | AA Batteries| Provide power for robots| 9.99 | <a href="https://www.amazon.com/Amazon-Basics-Batteries-Leak-Free-Household/dp/B00NTCH52W/"> Link </a> |
 
 
-# Resources
+# Sources
 | <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_assemble.html"> Link </a> |
-"> Link </a> |
+
 | <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
+
 | <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
+
 | <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
+
 | <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
 
 
