@@ -396,12 +396,12 @@ void stopMotors() {
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Sunfounder Kit | Used for building basic frameworks and circuits| 62.99 | <a href="https://www.amazon.com/SunFounder-Compatible-Tutorials-Including-Controller/dp/B0B778L1DZ/"> Link </a> |
-| Double Sided Foam Tape |Used to connect components | 8.09 | <a href="https://www.amazon.com/Mounting-Waterproof-Adhesive-Posters-Sensors/dp/B0DJLR75H9/"> Link </a> |
-| Mini desktop vacuum | Used as a cleaning module | 12.98 | <a href="amazon.com/ODISTAR-Endurance-Cordless-Rotatable-Keyboard/dp/B07Q128V6W/"> Link </a> |
-| 9V Batteries | Provide power for robots | 8.88 | <a href="https://www.amazon.com/Amazon-Basics-Performance-All-Purpose-Batteries/dp/B00MH4QM1S/"> Link </a> |
-| DMM| Used for circuit testing and circuit assistance | 9.99 | <a href="https://www.amazon.com/dp/B0CXM242J1"> Link </a> |
-| AA Batteries| Provide power for robots| 9.99 | <a href="https://www.amazon.com/Amazon-Basics-Batteries-Leak-Free-Household/dp/B00NTCH52W/"> Link </a> |
+| Sunfounder Kit | Used for building basic frameworks and circuits| 62.99$ | <a href="https://www.amazon.com/SunFounder-Compatible-Tutorials-Including-Controller/dp/B0B778L1DZ/"> Link </a> |
+| Double Sided Foam Tape |Used to connect components | 8.09$ | <a href="https://www.amazon.com/Mounting-Waterproof-Adhesive-Posters-Sensors/dp/B0DJLR75H9/"> Link </a> |
+| Mini desktop vacuum | Used as a cleaning module | 12.98$ | <a href="amazon.com/ODISTAR-Endurance-Cordless-Rotatable-Keyboard/dp/B07Q128V6W/"> Link </a> |
+| 9V Batteries | Provide power for robots | 8.88$ | <a href="https://www.amazon.com/Amazon-Basics-Performance-All-Purpose-Batteries/dp/B00MH4QM1S/"> Link </a> |
+| DMM| Used for circuit testing and circuit assistance | 9.99$ | <a href="https://www.amazon.com/dp/B0CXM242J1"> Link </a> |
+| AA Batteries| Provide power for robots| 9.99$ | <a href="https://www.amazon.com/Amazon-Basics-Batteries-Leak-Free-Household/dp/B00NTCH52W/"> Link </a> |
 
 
 # Sources
