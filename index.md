@@ -38,8 +38,7 @@ This Arduino-based project controls an autonomous floor-cleaning robot. It uses 
 
 
 
-###Final Milestone Description
-
+### Final Milestone Discription
 For my final milestone at BSE, I successfully scaled the autonomous cleaning robot into a dual-board IoT system. Since the previous milestone, I introduced a secondary Arduino board to drive a 4-digit display and an ESP8266 WiFi module, effectively solving the primary board's severe pin shortage. I also built a custom English web interface featuring an uploading progress bar that automatically scales and confirms data receipt with a "Robot Accepted" status.
 
 My biggest engineering challenge was troubleshooting a signal conflict where the communication wire was accidentally misrouted to an occupied A2 pin under a floating ground state, which initially caused the motors to run infinitely. Fixing this required rewiring the signal to a vacant A4 pin and establishing a common ground between the microcontrollers. My ultimate triumph was executing a flawless integration test where a mobile web command instantly triggered the real-time countdown and precise physical braking mechanisms.
