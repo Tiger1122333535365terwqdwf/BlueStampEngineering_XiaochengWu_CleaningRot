@@ -1,4 +1,4 @@
-# BlueStamp CleaningRobot
+<img width="5408" height="3680" alt="619114a117e894f37813da5bcca4844f" src="https://github.com/user-attachments/assets/6e9d99b6-86e2-4327-b45c-300c214556f4" /># BlueStamp CleaningRobot
 
 
 
@@ -7,6 +7,7 @@ This Arduino-based project controls an autonomous floor-cleaning robot. It uses 
 
 Building upon this foundation, my specific modification to the project is the integration of a wireless IoT control and real-time timer system. To overcome the hardware limitations of the original Arduino and introduce remote capabilities, I developed a master-slave dual-board architecture. I introduced an ESP8266 WiFi module to act as a "Command Center," which hosts a local web server and drives a physical 4-digit segment display. Through a custom-built mobile web interface, users can input a specific cleaning duration and wirelessly transmit the command to the robot. The ESP8266 tracks the countdown in real-time on the physical display and uses a dedicated hardware signal wire to the primary Arduino to instantly engage or cut the robot's motor power the exact second the timer reaches zero. This modification transforms the original robot into a remotely controllable, time-precise smart cleaning system.
 
+Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP‑12F, and an Arduino Uno. Its visual interface shows the current time, battery level at the top right, and today’s date on the left — the date can be freely changed, for example I set it to 2024. The menu includes a clock and a game; the game is the Chrome dinosaur game. The clock module lets you adjust the current time and set the robot’s cleaning duration, and it beeps when cleaning ends.Then, if left idle for 15 seconds, it enters sleep mode and shows some cute face animations on the screen and switch once in 5 seconds.
 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
@@ -20,6 +21,15 @@ Building upon this foundation, my specific modification to the project is the in
 <img width="949" height="628" alt="image" src="https://github.com/user-attachments/assets/0bfc4b36-6b7b-4dc6-a0bb-5647689fdda8" />
 
 
+
+# Extensions
+Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP‑12F, and an Arduino Uno. Its visual interface shows the current time, battery level at the top right, and today’s date on the left — the date can be freely changed, for example I set it to 2024. The menu includes a clock and a game; the game is the Chrome dinosaur game. The clock module lets you adjust the current time and set the robot’s cleaning duration, and it beeps when cleaning ends.Then, if left idle for 15 seconds, it enters sleep mode and shows some cute face animations on the screen and switch once in 5 seconds.
+<img width="1007" height="677" alt="image" src="https://github.com/user-attachments/assets/41455c79-688a-44f2-a826-f97f272171f7" />
+<img width="1010" height="670" alt="image" src="https://github.com/user-attachments/assets/eae68004-f10f-4db8-930f-fc4d36281ff2" />
+<img width="947" height="650" alt="image" src="https://github.com/user-attachments/assets/af8aea7d-6f13-450c-b56c-12065f031a99" />
+<img width="903" height="641" alt="image" src="https://github.com/user-attachments/assets/dd174877-6be9-4109-855a-7eadc75229e2" />
+<img width="946" height="665" alt="image" src="https://github.com/user-attachments/assets/56a96e32-3f7b-4e35-86e4-652930c1a5e8" />
+<img width="976" height="663" alt="image" src="https://github.com/user-attachments/assets/52811e9c-a2ba-443e-a8bf-203a27c68f43" />
 
 
 
