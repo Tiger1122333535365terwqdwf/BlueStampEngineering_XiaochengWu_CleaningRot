@@ -1,7 +1,3 @@
-<img width="5408" height="3680" alt="619114a117e894f37813da5bcca4844f" src="https://github.com/user-attachments/assets/6e9d99b6-86e2-4327-b45c-300c214556f4" /># BlueStamp CleaningRobot
-
-
-
 ### Project Introduction
 This Arduino-based project controls an autonomous floor-cleaning robot. It uses an ultrasonic sensor to navigate around obstacles by stopping and turning, while four DC motors and a motor driver handle its movement. To clean the floor, a vacuum and a brush assembly are integrated into the chassis.
 
