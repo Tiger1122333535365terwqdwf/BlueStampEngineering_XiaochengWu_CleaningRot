@@ -1,7 +1,7 @@
 
 
 
-### Project Introduction
+# Project Introduction
 This Arduino-based project controls an autonomous floor-cleaning robot. It uses an ultrasonic sensor to navigate around obstacles by stopping and turning, while four DC motors and a motor driver handle its movement. To clean the floor, a vacuum and a brush assembly are integrated into the chassis.
 
 Building upon this foundation, my specific modification to the project is the integration of a wireless IoT control and real-time timer system. To overcome the hardware limitations of the original Arduino and introduce remote capabilities, I developed a master-slave dual-board architecture. I introduced an ESP8266 WiFi module to act as a "Command Center," which hosts a local web server and drives a physical 4-digit segment display. Through a custom-built mobile web interface, users can input a specific cleaning duration and wirelessly transmit the command to the robot. The ESP8266 tracks the countdown in real-time on the physical display and uses a dedicated hardware signal wire to the primary Arduino to instantly engage or cut the robot's motor power the exact second the timer reaches zero. This modification transforms the original robot into a remotely controllable, time-precise smart cleaning system.
