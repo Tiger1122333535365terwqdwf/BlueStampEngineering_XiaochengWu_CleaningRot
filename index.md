@@ -19,6 +19,9 @@ Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP
 
 <img width="949" height="628" alt="image" src="https://github.com/user-attachments/assets/0bfc4b36-6b7b-4dc6-a0bb-5647689fdda8" />
 
+<img width="457" height="561" alt="image" src="https://github.com/user-attachments/assets/b4aa9f96-2a33-4cc2-92a9-300397f81cd1" />
+
+<img width="987" height="659" alt="image" src="https://github.com/user-attachments/assets/f3639a4e-62a7-4749-b122-3022893833a1" />
 
 
 # Extensions
