@@ -33,7 +33,7 @@ Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP
 <img width="946" height="665" alt="image" src="https://github.com/user-attachments/assets/56a96e32-3f7b-4e35-86e4-652930c1a5e8" />
 <img width="976" height="663" alt="image" src="https://github.com/user-attachments/assets/52811e9c-a2ba-443e-a8bf-203a27c68f43" />
 
-# Code
+## Code
 ```c++
 #include <Wire.h>
 #include <Adafruit_GFX.h>
