@@ -33,8 +33,426 @@ Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP
 <img width="946" height="665" alt="image" src="https://github.com/user-attachments/assets/56a96e32-3f7b-4e35-86e4-652930c1a5e8" />
 <img width="976" height="663" alt="image" src="https://github.com/user-attachments/assets/52811e9c-a2ba-443e-a8bf-203a27c68f43" />
 
+# Code
+```c++
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
+// ================= 硬件定义 =================
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+const int JOY_VRX = A0; 
+const int JOY_VRY = A1; 
+const int JOY_SW = 4;   
+const int BUZZER = 5;   
+
+// ================= 系统状态 =================
+int state = 0;
+
+// ================= 时间与系统变量 =================
+int clock_h = 11, clock_m = 56, clock_s = 15; 
+int clock_year = 2024, clock_month = 7, clock_day = 26;
+unsigned long lastTimeUpdate = 0;
+unsigned long lastActivityTime = 0; 
+
+// 倒计时变量
+int timer_h = 0, timer_m = 0, timer_s = 0;
+bool isTimerRunning = false;
+unsigned long lastTimerTick = 0;
+int timerCursor = 0; 
+
+// 菜单与交互变量
+int mainMenuIdx = 1; 
+int subMenuIdx = 1;  
+unsigned long lastJoyMove = 0;
+bool lastBtnState = HIGH;
+unsigned long lastDebounce = 0;
+
+// ================= 游戏专属变量 =================
+float dinoY = 40, dinoVy = 0;
+float cactusX = 128;
+float cactusSpeed = 3.0; // 初始速度
+int cactusWidth = 4;     // 初始宽度
+bool isGameOver = false;
+int score = 0;
+int gameExitClicks = 0;
+unsigned long lastGameClickTime = 0;
+
+// ================= 初始化 =================
+void setup() {
+  Serial.begin(9600);
+  pinMode(JOY_SW, INPUT_PULLUP);
+  pinMode(BUZZER, OUTPUT);
+  digitalWrite(BUZZER, HIGH);
+
+  // 初始化随机数种子 (读取一个悬空引脚的噪音)，保证每次开机障碍随机
+  randomSeed(analogRead(A2)); 
+
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); 
+  }
+  
+  display.clearDisplay();
+  display.display();
+}
+
+// ================= 主循环 =================
+void loop() {
+  updateClock();    
+  handleInputs();   
+
+  // 15秒无操作自动回待机
+  if (state != 0 && state != 4 && state != 7) {
+    if (millis() - lastActivityTime > 15000) {
+      state = 0; 
+    }
+  }
+
+  display.clearDisplay(); 
+
+  switch(state) {
+    case 0: drawFaces(); break;
+    case 1: drawClockInterface(); break;
+    case 2: drawMainMenu(); break;
+    case 3: drawSubMenu(); break;
+    case 4: drawTimerApp(); break;
+    case 5: drawSetTime(); break;
+    case 6: drawGameIntro(); break;
+    case 7: playGame(); break;
+  }
+
+  display.display(); 
+}
+
+// ================= 蜂鸣器 =================
+void beep(int ms) {
+  digitalWrite(BUZZER, LOW);
+  delay(ms);
+  digitalWrite(BUZZER, HIGH);
+}
+
+// ================= 后台时间更新 =================
+void updateClock() {
+  if (millis() - lastTimeUpdate >= 1000) {
+    lastTimeUpdate += 1000;
+    clock_s++;
+    if (clock_s >= 60) { clock_s = 0; clock_m++; }
+    if (clock_m >= 60) { clock_m = 0; clock_h++; }
+    if (clock_h >= 24) { clock_h = 0; }
+
+    if (isTimerRunning && millis() - lastTimerTick >= 1000) {
+      lastTimerTick = millis();
+      if (timer_s == 0 && timer_m == 0 && timer_h == 0) {
+        isTimerRunning = false;
+        beep(1000); 
+      } else {
+        timer_s--;
+        if (timer_s < 0) { timer_s = 59; timer_m--; }
+        if (timer_m < 0) { timer_m = 59; timer_h--; }
+      }
+    }
+  }
+}
+
+// ================= 输入处理 =================
+void handleInputs() {
+  int vrx = analogRead(JOY_VRX);
+  int vry = analogRead(JOY_VRY);
+  bool btn = digitalRead(JOY_SW);
+
+  if (btn == LOW && lastBtnState == HIGH && millis() - lastDebounce > 50) {
+    lastDebounce = millis();
+    lastActivityTime = millis(); 
+    onButtonPress();
+  }
+  lastBtnState = btn;
+
+  if (millis() - lastJoyMove > 200) {
+    if (vrx > 800) { onJoyMove(1, 0); lastJoyMove = millis(); lastActivityTime = millis(); } 
+    else if (vrx < 200) { onJoyMove(-1, 0); lastJoyMove = millis(); lastActivityTime = millis(); } 
+    else if (vry > 800) { onJoyMove(0, -1); lastJoyMove = millis(); lastActivityTime = millis(); } 
+    else if (vry < 200) { onJoyMove(0, 1); lastJoyMove = millis(); lastActivityTime = millis(); } 
+  }
+}
+
+// ================= 核心交互逻辑 =================
+void onButtonPress() {
+  if (state == 0) { state = 1; } 
+  else if (state == 1) { state = 2; mainMenuIdx = 1; } 
+  else if (state == 2) { 
+    if (mainMenuIdx == 0) state = 1; 
+    else if (mainMenuIdx == 1) { state = 3; subMenuIdx = 1; }
+    else if (mainMenuIdx == 2) state = 6; 
+  }
+  else if (state == 3) {
+    if (subMenuIdx == 0) { state = 2; } 
+    else if (subMenuIdx == 1) { state = 4; timerCursor = 3; } 
+    else if (subMenuIdx == 2) { state = 5; timerCursor = 0; } 
+  }
+  else if (state == 4) {
+    if (timerCursor == 3) { isTimerRunning = true; lastTimerTick = millis(); beep(100); } 
+    else if (timerCursor == 4) { isTimerRunning = false; beep(100); } 
+    else if (timerCursor == 5) { timer_h=0; timer_m=0; timer_s=0; isTimerRunning=false; beep(50); } 
+    else if (timerCursor == 6) { state = 3; isTimerRunning=false; } 
+  }
+  else if (state == 5) {
+    if (timerCursor == 2) { state = 3; } 
+  }
+  else if (state == 6) {
+    state = 7; isGameOver = false; score = 0; dinoY = 40; 
+    cactusX = 128; cactusSpeed = 3.0; cactusWidth = 4; // 初始化游戏难度
+  }
+  else if (state == 7) {
+    unsigned long now = millis();
+    if (now - lastGameClickTime < 300) {
+      gameExitClicks++;
+      if (gameExitClicks >= 5) { state = 2; gameExitClicks = 0; } 
+    } else {
+      gameExitClicks = 1;
+      if (dinoY >= 40 && !isGameOver) { dinoVy = -6; beep(50); } 
+      if (isGameOver) { 
+        isGameOver = false; score = 0; 
+        cactusX = 128; cactusSpeed = 3.0; cactusWidth = 4; // 重置难度
+      } 
+    }
+    lastGameClickTime = now;
+  }
+}
+
+void onJoyMove(int dx, int dy) {
+  if (state == 2) {
+    mainMenuIdx += dx;
+    if (mainMenuIdx < 0) mainMenuIdx = 0;
+    if (mainMenuIdx > 2) mainMenuIdx = 2;
+  }
+  else if (state == 3) {
+    subMenuIdx += dy;
+    if(subMenuIdx < 0) subMenuIdx = 0;
+    if(subMenuIdx > 2) subMenuIdx = 2;
+  }
+  else if (state == 4) { 
+    if (dx != 0) {
+      timerCursor += dx;
+      if (timerCursor < 0) timerCursor = 6; 
+      if (timerCursor > 6) timerCursor = 0;
+    }
+    if (dy != 0) {
+      if (timerCursor == 0) timer_h = constrain(timer_h - dy, 0, 99);
+      if (timerCursor == 1) timer_m = constrain(timer_m - dy, 0, 59);
+      if (timerCursor == 2) timer_s = constrain(timer_s - dy, 0, 59);
+    }
+  }
+  else if (state == 5) { 
+    if (dx != 0) {
+      timerCursor += dx;
+      if (timerCursor < 0) timerCursor = 2; 
+      if (timerCursor > 2) timerCursor = 0;
+    }
+    if (dy != 0) {
+      if (timerCursor == 0) clock_h = constrain(clock_h - dy, 0, 23);
+      if (timerCursor == 1) clock_m = constrain(clock_m - dy, 0, 59);
+    }
+  }
+}
+
+// ================= 界面绘制 =================
+
+void drawFaces() {
+  int phase = (millis() / 5000) % 3; 
+  if (phase == 0) { 
+    display.fillRect(20, 20, 30, 10, WHITE);
+    display.fillRect(78, 20, 30, 10, WHITE);
+    display.drawRect(54, 40, 20, 8, WHITE);
+  } else if (phase == 1) { 
+    display.drawLine(20, 20, 40, 30, WHITE); display.drawLine(20, 40, 40, 30, WHITE);
+    display.drawLine(108, 20, 88, 30, WHITE); display.drawLine(108, 40, 88, 30, WHITE);
+    display.drawRect(54, 45, 20, 6, WHITE);
+  } else { 
+    display.drawCircle(30, 30, 10, WHITE); display.drawCircle(30, 30, 9, WHITE);
+    display.drawCircle(98, 30, 10, WHITE); display.drawCircle(98, 30, 9, WHITE);
+    display.setTextSize(2); display.setCursor(58, 30); display.print("w");
+  }
+}
+
+void drawClockInterface() {
+  display.setTextSize(1); display.setTextColor(WHITE);
+  display.setCursor(45, 0); display.print("NO APP");
+  
+  display.drawRect(110, 0, 14, 7, WHITE);
+  display.fillRect(124, 2, 2, 3, WHITE);
+  display.fillRect(112, 2, 10, 3, WHITE);
+
+  display.setCursor(0, 15);
+  display.print(clock_year); display.print("-"); 
+  if(clock_month<10) display.print("0"); display.print(clock_month); display.print("-");
+  if(clock_day<10) display.print("0"); display.print(clock_day);
+
+  display.setTextSize(3);
+  display.setCursor(15, 30);
+  if(clock_h<10) display.print("0"); display.print(clock_h); display.print(":");
+  if(clock_m<10) display.print("0"); display.print(clock_m);
+  
+  display.setTextSize(1);
+  display.setCursor(105, 45);
+  if(clock_s<10) display.print("0"); display.print(clock_s);
+}
+
+void drawMainMenu() {
+  for(int i=0; i<3; i++) {
+    int x = 10 + i * 40;
+    if (i == mainMenuIdx) display.drawRect(x-2, 18, 32, 32, WHITE); 
+    
+    if (i == 0) { 
+      display.drawRect(x, 20, 24, 24, WHITE);
+      display.fillTriangle(x+6, 32, x+14, 26, x+14, 38, WHITE);
+      display.fillRect(x+14, 30, 6, 5, WHITE);
+    } else if (i == 1) { 
+      display.drawCircle(x+14, 32, 10, WHITE);
+      display.drawLine(x+14, 32, x+14, 25, WHITE);
+      display.drawLine(x+14, 32, x+20, 32, WHITE);
+    } else if (i == 2) { 
+      display.drawRoundRect(x+2, 26, 24, 12, 3, WHITE);
+      display.fillCircle(x+8, 32, 3, WHITE);
+      display.fillCircle(x+18, 32, 2, WHITE);
+    }
+  }
+}
+
+void drawSubMenu() {
+  display.setTextSize(1);
+  const char* items[] = {"<- Back", "1. Remote Control", "2. Set Time"};
+  for(int i=0; i<3; i++) {
+    if (subMenuIdx == i) display.fillRect(5, 5 + i*18, 118, 14, WHITE);
+    display.setTextColor(subMenuIdx == i ? BLACK : WHITE);
+    display.setCursor(10, 8 + i*18); display.print(items[i]);
+  }
+}
+
+void drawTimerApp() {
+  display.setTextSize(1); 
+  if (timerCursor == 6) display.fillRect(0, 0, 45, 10, WHITE);
+  display.setTextColor(timerCursor == 6 ? BLACK : WHITE);
+  display.setCursor(2, 1); display.print("<- Back");
+  
+  display.setTextColor(WHITE);
+  display.setCursor(60, 1); display.print("Timer");
+
+  display.setTextSize(2);
+  int xOffsets[] = {15, 50, 85};
+  int vals[] = {timer_h, timer_m, timer_s};
+  for(int i=0; i<3; i++) {
+    if (timerCursor == i) display.fillRect(xOffsets[i]-2, 20, 28, 18, WHITE);
+    display.setTextColor(timerCursor == i ? BLACK : WHITE);
+    display.setCursor(xOffsets[i], 22);
+    if(vals[i]<10) display.print("0"); display.print(vals[i]);
+    if(i<2) { display.setTextColor(WHITE); display.setCursor(xOffsets[i]+26, 22); display.print(":"); }
+  }
+
+  display.setTextSize(1);
+  if(timerCursor == 3) display.fillRect(5, 50, 35, 10, WHITE);
+  display.setTextColor(timerCursor == 3 ? BLACK : WHITE);
+  display.setCursor(8, 51); display.print("START");
+
+  if(timerCursor == 4) display.fillRect(45, 50, 30, 10, WHITE);
+  display.setTextColor(timerCursor == 4 ? BLACK : WHITE);
+  display.setCursor(48, 51); display.print("STOP");
+
+  if(timerCursor == 5) display.fillRect(80, 50, 35, 10, WHITE);
+  display.setTextColor(timerCursor == 5 ? BLACK : WHITE);
+  display.setCursor(83, 51); display.print("CLEAR");
+}
+
+void drawSetTime() {
+  display.setTextSize(1); 
+  if (timerCursor == 2) display.fillRect(0, 0, 45, 10, WHITE);
+  display.setTextColor(timerCursor == 2 ? BLACK : WHITE);
+  display.setCursor(2, 1); display.print("<- Back");
+  
+  display.setTextColor(WHITE);
+  display.setCursor(60, 1); display.print("Set Clock");
+
+  display.setTextSize(3);
+  if (timerCursor == 0) display.fillRect(18, 28, 38, 26, WHITE);
+  display.setTextColor(timerCursor == 0 ? BLACK : WHITE);
+  display.setCursor(20, 30); if(clock_h<10) display.print("0"); display.print(clock_h);
+  
+  display.setTextColor(WHITE); display.setCursor(55, 30); display.print(":");
+
+  if (timerCursor == 1) display.fillRect(70, 28, 38, 26, WHITE);
+  display.setTextColor(timerCursor == 1 ? BLACK : WHITE);
+  display.setCursor(72, 30); if(clock_m<10) display.print("0"); display.print(clock_m);
+}
+
+void drawGameIntro() {
+  display.drawRect(10, 20, 20, 20, WHITE);
+  display.fillTriangle(14, 30, 22, 24, 22, 36, WHITE);
+  
+  display.setTextSize(1); display.setTextColor(WHITE);
+  display.setCursor(40, 26); display.print("Dino Game");
+  display.setCursor(40, 40); display.print("Click to Start");
+}
+
+void playGame() {
+  if (!isGameOver) {
+    dinoVy += 0.5; // 重力
+    dinoY += dinoVy;
+    if (dinoY > 40) { dinoY = 40; dinoVy = 0; } // 落地
+    
+    cactusX -= cactusSpeed; // 根据动态速度移动
+    
+    // 如果仙人掌移出屏幕左侧
+    if (cactusX < -cactusWidth) { 
+      score++; 
+      
+      // 1. 速度逐渐增加，最大限制在 8.0 防止太快穿模
+      cactusSpeed += 0.3; 
+      if (cactusSpeed > 8.0) cactusSpeed = 8.0; 
+      
+      // 2. 随机出现间距 (屏幕外随机 0~60 的额外距离)
+      cactusX = 128 + random(0, 60); 
+      
+      // 3. 随机仙人掌宽度 (1棵或2棵连在一起，也就是4像素或8像素)
+      cactusWidth = random(1, 3) * 4; 
+    } 
+    
+    // 精确碰撞检测，考虑动态宽度
+    // 恐龙的X坐标是 10 到 20
+    if (cactusX < 20 && (cactusX + cactusWidth) > 10 && dinoY > 30) {
+      isGameOver = true;
+      beep(500); 
+    }
+  }
+
+  // 画地面
+  display.drawLine(0, 50, 128, 50, WHITE); 
+  
+  // 画恐龙
+  display.fillRect(10, (int)dinoY, 10, 10, WHITE);
+  display.fillRect(6, (int)dinoY+4, 4, 4, WHITE);
+  
+  // 画动态宽度的仙人掌
+  display.fillRect((int)cactusX, 40, cactusWidth, 10, WHITE);
+  display.fillRect((int)cactusX-2, 42, cactusWidth+4, 3, WHITE); // 中间的刺会随着宽度自适应拉长
+
+  // 显示分数和难度(速度指示)
+  display.setTextSize(1); display.setCursor(90, 0); 
+  display.print("S:"); display.print(score);
+
+  if (isGameOver) {
+    display.setCursor(20, 20); display.print("GAME OVER");
+    display.setCursor(15, 30); display.print("Click Restart");
+  }
+  
+  if (gameExitClicks > 0) {
+     display.setCursor(0, 0); display.print(gameExitClicks); display.print("/5 Quit");
+  }
+}
+```
   
 # Final Milestone
 
