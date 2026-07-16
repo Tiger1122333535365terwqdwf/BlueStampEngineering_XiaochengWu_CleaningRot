@@ -25,6 +25,10 @@ Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP
 
 
 # Extensions
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LuKBLR38-0E?si=EKg3B_dw14PnE_Y4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP‑12F, and an Arduino Uno. Its visual interface shows the current time, battery level at the top right, and today’s date on the left — the date can be freely changed, for example I set it to 2024. The menu includes a clock and a game; the game is the Chrome dinosaur game. The clock module lets you adjust the current time and set the robot’s cleaning duration, and it beeps when cleaning ends.Then, if left idle for 15 seconds, it enters sleep mode and shows some cute face animations on the screen and switch once in 5 seconds.
 <img width="1007" height="677" alt="image" src="https://github.com/user-attachments/assets/41455c79-688a-44f2-a826-f97f272171f7" />
 <img width="1010" height="670" alt="image" src="https://github.com/user-attachments/assets/eae68004-f10f-4db8-930f-fc4d36281ff2" />
