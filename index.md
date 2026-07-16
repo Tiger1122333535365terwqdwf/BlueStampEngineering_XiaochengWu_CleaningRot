@@ -24,7 +24,7 @@ Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP
 <img width="987" height="659" alt="image" src="https://github.com/user-attachments/assets/f3639a4e-62a7-4749-b122-3022893833a1" />
 
 
-# Milestone 4
+# Final Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LuKBLR38-0E?si=EKg3B_dw14PnE_Y4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -458,7 +458,7 @@ void playGame() {
 }
 ```
   
-# Final Milestone
+# Milestone 3
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X6mOFYc2DLk?si=CoWOAkggOB5sXpxC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
