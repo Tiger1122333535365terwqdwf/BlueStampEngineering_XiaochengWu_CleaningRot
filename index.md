@@ -832,14 +832,15 @@ void stopMotors() {
 
 
 # Sources
-| <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_assemble.html"> Link </a> |
 
-| <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
+| **intro** | **Link** |
+|:--:|:--:|
+|OLED Display Library Guide | <a href="https://learn.adafruit.com/monochrome-oled-breakouts"> Link </a> |
+|ESP8266 Web Server Tutorial| <a href="https://randomnerdtutorials.com/esp8266-web-server/"> Link </a> |
+| ESP8266 IoT Network Server Tutorial | <a href="http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/"> Link </a> |
+| Arduino Wire Library (I2C Communication) Reference Guide | <a href="http://www.taichi-maker.com/homepage/reference-index/arduino-library-index/wire-library/arduino-wire-write/"> Link </a> |
+| L298N Motor Driver Guide | <a href="https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/"> Link </a> |
+| Millis Non blocking Timing Control Logic| <a href="http://www.taichi-maker.com/homepage/reference-index/arduino-code-reference/millis/"> Link </a> |
 
-| <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
-
-| <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
-
-| <a href="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html"> Link </a> |
 
 
