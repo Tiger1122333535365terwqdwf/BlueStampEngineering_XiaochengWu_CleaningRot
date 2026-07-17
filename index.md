@@ -833,7 +833,7 @@ void stopMotors() {
 
 # Sources
 
-| **title** | **Link** |
+| **Title** | **Link** |
 |:--:|:--:|
 |OLED Display Library Guide | <a href="https://learn.adafruit.com/monochrome-oled-breakouts"> Link </a> |
 |ESP8266 Web Server Tutorial| <a href="https://randomnerdtutorials.com/esp8266-web-server/"> Link </a> |
