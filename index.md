@@ -13,15 +13,10 @@ Besides, I built a small remote controller with an OLED screen, a buzzer, an ESP
 |:--:|:--:|:--:|:--:|
 | Xiaocheng Wu | Beijing Huijia Private School | Electrical Engineering | Year 9
 
-<img width="890" height="562" alt="image" src="https://github.com/user-attachments/assets/be9b6f75-ba6c-4094-af43-f4170ca6fe05" />
+<img width="1069" height="1008" alt="Gemini_Generated_Image_za5wgtza5wgtza5w" src="https://github.com/user-attachments/assets/5fae8cec-7b1f-42bd-b18b-bf0592807389" />
 
-<img width="602" height="358" alt="image" src="https://github.com/user-attachments/assets/7fd0abaf-870a-40e5-bee6-eb21da0b197b" />
+<img width="1069" height="1008" alt="Gemini_Generated_Image_u2hgatu2hgatu2hg" src="https://github.com/user-attachments/assets/22ad679d-53ab-43db-addb-22d8cac0b967" />
 
-<img width="949" height="628" alt="image" src="https://github.com/user-attachments/assets/0bfc4b36-6b7b-4dc6-a0bb-5647689fdda8" />
-
-<img width="457" height="561" alt="image" src="https://github.com/user-attachments/assets/b4aa9f96-2a33-4cc2-92a9-300397f81cd1" />
-
-<img width="987" height="659" alt="image" src="https://github.com/user-attachments/assets/f3639a4e-62a7-4749-b122-3022893833a1" />
 
 
 # Final Milestone
